@@ -59,3 +59,16 @@ body {
   color: var(--color-primary);
   margin-bottom: 0.5rem;
 }
+
+.grid-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin: 4rem 8rem;
+  place-content: center;
+  place-items: center;
+}
+
+.grid-image {
+  width: 100%;
+}
