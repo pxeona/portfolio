@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap");
 
 * {
   margin: 0;
@@ -6,6 +6,24 @@
   box-sizing: inherit;
 }
 
+html {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Poppins", sans-serif;
+  margin: 2rem 5rem 2rem 5rem;
+  background-color: #f3f3f3;
+}
+
+#nav-items > * {
+  font-weight: 300;
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+#nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
