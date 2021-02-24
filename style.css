@@ -28,9 +28,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-bottom: solid;
-  border-width: thin;
-  border-color: var(--border-color);
+  border-top: 1px solid #ddd;
 }
 
 .nav-items > * {
@@ -40,7 +38,9 @@ body {
   font-size: large;
 }
 
-a {
+.nav-link:link,
+.nav-link:visited {
+  transition: all 0.3s;
   text-decoration: inherit;
   color: inherit;
 }
@@ -60,9 +60,6 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-bottom: solid;
-  border-width: thin;
-  border-color: var(--border-color);
   text-align: center;
 }
 
