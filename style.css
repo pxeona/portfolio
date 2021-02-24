@@ -36,8 +36,13 @@ body {
 .nav-items > * {
   font-weight: 300;
   display: inline-block;
-  margin-left: 2rem;
+  padding-left: 2rem;
   font-size: large;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
 }
 
 #nav-bar {
