@@ -1,9 +1,20 @@
 const d_arrow = document.getElementById("downward-arrow");
+const nav_bar_items = document.querySelector(".nav-items");
 
-const my_work = document.getElementById("my-work");
-const skills = document.getElementById("skills");
-const contacts = document.getElementById("footer");
-
-d_arrow.addEventListener("click", function () {
-  my_work.scrollIntoView({ behavior: "smooth" });
+d_arrow.addEventListener("click", (e) => {
+  e.preventDefault();
+  smoothScrolling(e.target);
 });
+
+nav_bar_items.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (e.target.classList.contains("nav-link")) {
+    smoothScrolling(e.target);
+  }
+});
+
+const smoothScrolling = function (eventGen) {
+  const location = document.querySelector(eventGen.getAttribute("href"));
+  location.scrollIntoView({ behavior: "smooth" });
+};
