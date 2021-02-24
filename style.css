@@ -31,6 +31,10 @@ body {
   border-top: 1px solid #ddd;
 }
 
+#navigation {
+  height: 5rem;
+}
+
 .nav-items > * {
   font-weight: 300;
   display: inline-block;
@@ -46,10 +50,18 @@ body {
 }
 
 #nav-bar {
-  padding: 2rem 5rem 0rem 5rem;
+  padding: 0rem 3rem;
+  height: 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 0.5s;
+  width: 100%;
+}
+
+#nav-bar.fixedNav {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 #intro {
@@ -81,6 +93,7 @@ body {
 .grid-image {
   width: 100%;
   transition: all 0.5s;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 .grid-image:hover {
