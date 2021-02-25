@@ -34,6 +34,7 @@ const addStickyNav = function (entries) {
 const obsParams = {
   root: null,
   threshold: 0,
+  //rootMargin: `-${headerHeight}px`,
 };
 
 const headerObs = new IntersectionObserver(addStickyNav, obsParams);
