@@ -6,6 +6,7 @@ const nav_bar = document.getElementById("nav-bar");
 const header = document.getElementById("navigation");
 const homePage = document.getElementById("intro");
 const sections = document.querySelectorAll(".section");
+const gridImages = document.querySelectorAll(".grid-image");
 
 const headerHeight = header.getBoundingClientRect().height;
 
@@ -42,6 +43,13 @@ const loadOnScroll = function (entries, observer) {
   observer.unobserve(entry.target);
 };
 
+const unBlurImage = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("blur-img");
+  observer.unobserve(entry.target);
+};
+
 //Observer parameters
 
 const obsParamsHeader = {
@@ -55,6 +63,11 @@ const obsParamsSection = {
   threshold: 0.1,
 };
 
+const obsParamsImage = {
+  root: null,
+  threshold: 0,
+};
+
 //Observers
 
 const headerObs = new IntersectionObserver(addStickyNav, obsParamsHeader);
@@ -62,9 +75,16 @@ headerObs.observe(header);
 
 const sectionObs = new IntersectionObserver(loadOnScroll, obsParamsSection);
 
+const imageObs = new IntersectionObserver(unBlurImage, obsParamsImage);
+
 sections.forEach(function (section) {
   sectionObs.observe(section);
   section.classList.add("section--hidden");
+});
+
+gridImages.forEach(function (image) {
+  imageObs.observe(image);
+  image.classList.add("blur-img");
 });
 
 //Event listeners

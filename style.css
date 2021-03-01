@@ -98,8 +98,12 @@ body {
 
 .grid-image {
   width: 100%;
-  transition: all 0.5s;
+  transition: all 1s;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.blur-img {
+  filter: blur(20px);
 }
 
 .grid-image:hover {
