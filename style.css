@@ -49,6 +49,7 @@ body {
   justify-content: space-between;
   transition: all 1s;
   width: 100%;
+  z-index: 1;
 }
 
 #nav__bar.fixedNav {
@@ -56,8 +57,55 @@ body {
   background-color: rgba(255, 255, 255, 0.95);
 }
 
+.hamburger {
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.hamburger__lines,
+.hamburger__lines::before,
+.hamburger__lines::after {
+  width: 1.5rem;
+  height: 0.1rem;
+  background-color: black;
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburger__lines::before,
+.hamburger__lines::after {
+  content: "";
+  position: absolute;
+}
+
+.hamburger__lines::before {
+  transform: translateY(-0.5rem);
+}
+
+.hamburger__lines::after {
+  transform: translateY(0.5rem);
+}
+
+.hamburger.open .hamburger__lines {
+  transform: translateX(2rem);
+  background-color: transparent;
+}
+
+.hamburger.open .hamburger__lines::before {
+  transform: rotate(45deg) translate(-1.5rem, 1.5rem);
+}
+
+.hamburger.open .hamburger__lines::after {
+  transform: rotate(-45deg) translate(-1.5rem, -1.5rem);
+}
+
 #intro {
-  padding: 2rem 5rem 0rem 5rem;
+  padding: 10rem 5rem 5rem 5rem;
   height: 100vh;
   display: flex;
   font-size: larger;
@@ -69,20 +117,19 @@ body {
 
 .header__title {
   flex: 1;
-
   max-width: 115rem;
   display: grid;
   grid-template-columns: 3fr 2fr;
   row-gap: 3rem;
   align-content: center;
   justify-content: center;
-
   align-items: center;
   justify-items: center;
 }
 
 .highlight {
   position: relative;
+  z-index: -1;
 }
 
 .highlight::after {
@@ -112,8 +159,9 @@ body {
 .header__img {
   width: 100%;
   grid-column: 2 / 3;
-  grid-row: 1 / span 4;
+  grid-row: 1 / span 3;
   transform: translateY(-6rem);
+  z-index: -1;
 }
 
 #downward__arrow {
@@ -233,4 +281,47 @@ h3 {
 .icon {
   font-size: 7rem;
   display: block;
+}
+
+@media screen and (max-width: 900px) {
+  .nav__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(100vw);
+    transition: transform 0.5s ease-in-out;
+    background-color: #f3f3f3;
+  }
+
+  .nav__items.open {
+    transform: translateX(0);
+  }
+
+  .nav__items li {
+    width: 100vw;
+    height: 100%;
+  }
+
+  .nav__items li a {
+    font-size: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .header__img {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }

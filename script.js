@@ -1,12 +1,14 @@
 //DOM elements
 
 const d_arrow = document.getElementById("downward__arrow");
-const nav_bar_items = document.querySelector(".nav__items");
+const nav_items_div = document.querySelector(".nav__items");
 const nav_bar = document.getElementById("nav__bar");
+const nav_bar_items = document.querySelectorAll(".nav__item");
 const header = document.getElementById("navigation");
 const homePage = document.getElementById("intro");
 const sections = document.querySelectorAll(".section");
 const gridImages = document.querySelectorAll(".grid__image");
+const hamburger = document.querySelector(".hamburger");
 
 const headerHeight = header.getBoundingClientRect().height;
 
@@ -94,7 +96,7 @@ d_arrow.addEventListener("click", (e) => {
   smoothScrolling(e.target);
 });
 
-nav_bar_items.addEventListener("click", (e) => {
+nav_items_div.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (e.target.classList.contains("nav__link")) {
@@ -104,3 +106,21 @@ nav_bar_items.addEventListener("click", (e) => {
 
 nav_bar.addEventListener("mouseover", handleHover.bind(0.5));
 nav_bar.addEventListener("mouseout", handleHover.bind(1));
+
+//Responsive nav bar
+hamburger.addEventListener("click", () => {
+  toggleMenu();
+});
+
+nav_bar_items.forEach((item) => {
+  item.addEventListener("click", () => {
+    if (hamburger.classList.contains("open")) {
+      toggleMenu();
+    }
+  });
+});
+
+function toggleMenu() {
+  hamburger.classList.toggle("open");
+  nav_items_div.classList.toggle("open");
+}
