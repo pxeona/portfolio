@@ -1,21 +1,21 @@
 //DOM elements
 
-const d_arrow = document.getElementById("downward-arrow");
-const nav_bar_items = document.querySelector(".nav-items");
-const nav_bar = document.getElementById("nav-bar");
+const d_arrow = document.getElementById("downward__arrow");
+const nav_bar_items = document.querySelector(".nav__items");
+const nav_bar = document.getElementById("nav__bar");
 const header = document.getElementById("navigation");
 const homePage = document.getElementById("intro");
 const sections = document.querySelectorAll(".section");
-const gridImages = document.querySelectorAll(".grid-image");
+const gridImages = document.querySelectorAll(".grid__image");
 
 const headerHeight = header.getBoundingClientRect().height;
 
 //Methods
 
 const handleHover = function (e) {
-  if (e.target.classList.contains("nav-link")) {
-    const parent = e.target.closest("#nav-bar");
-    const siblings = parent.querySelectorAll(".nav-link");
+  if (e.target.classList.contains("nav__link")) {
+    const parent = e.target.closest("#nav__bar");
+    const siblings = parent.querySelectorAll(".nav__link");
 
     siblings.forEach((el) => {
       if (el !== e.target) {
@@ -39,14 +39,14 @@ const addStickyNav = function (entries) {
 const loadOnScroll = function (entries, observer) {
   const [entry] = entries;
   if (!entry.isIntersecting) return;
-  entry.target.classList.remove("section--hidden");
+  entry.target.classList.remove("section__hidden");
   observer.unobserve(entry.target);
 };
 
 const unBlurImage = function (entries, observer) {
   const [entry] = entries;
   if (!entry.isIntersecting) return;
-  entry.target.classList.remove("blur-img");
+  entry.target.classList.remove("blur__img");
   observer.unobserve(entry.target);
 };
 
@@ -79,12 +79,12 @@ const imageObs = new IntersectionObserver(unBlurImage, obsParamsImage);
 
 sections.forEach(function (section) {
   sectionObs.observe(section);
-  section.classList.add("section--hidden");
+  section.classList.add("section__hidden");
 });
 
 gridImages.forEach(function (image) {
   imageObs.observe(image);
-  image.classList.add("blur-img");
+  image.classList.add("blur__img");
 });
 
 //Event listeners
@@ -97,7 +97,7 @@ d_arrow.addEventListener("click", (e) => {
 nav_bar_items.addEventListener("click", (e) => {
   e.preventDefault();
 
-  if (e.target.classList.contains("nav-link")) {
+  if (e.target.classList.contains("nav__link")) {
     smoothScrolling(e.target);
   }
 });
