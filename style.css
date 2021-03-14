@@ -106,7 +106,7 @@ body {
 }
 
 #intro {
-  padding: 10rem 5rem 5rem 5rem;
+  margin: 5rem 5rem 5rem 5rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -200,7 +200,7 @@ body {
 
 .grid__content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 3fr;
   gap: 3rem;
   margin: 3rem 4rem;
   padding: 2rem;
@@ -316,15 +316,14 @@ h3 {
     height: 100%;
   }
 
-  .header__title {
-    flex: 1;
-    max-width: 115rem;
+  .grid__content {
     grid-template-columns: auto;
-    row-gap: 3rem;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
+    padding-top: 3rem;
+    margin: 0;
+  }
+
+  .header__title {
+    grid-template-columns: auto;
   }
 
   .header__img {
