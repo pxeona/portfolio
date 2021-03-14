@@ -109,6 +109,13 @@ body {
   font-weight: 500;
 }
 
+.header__img {
+  width: 100%;
+  grid-column: 2 / 3;
+  grid-row: 1 / span 4;
+  transform: translateY(-6rem);
+}
+
 #downward__arrow {
   font-size: 4rem;
   transition: all 0.5s;
