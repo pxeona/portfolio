@@ -214,6 +214,10 @@ body {
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
+.grid__item {
+  justify-self: left;
+}
+
 .blur__img {
   filter: blur(20px);
 }
