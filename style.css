@@ -198,9 +198,19 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.grid__content {
+.grid__content__projects {
   display: grid;
   grid-template-columns: 2fr 3fr;
+  gap: 3rem;
+  margin: 3rem 4rem;
+  padding: 2rem;
+  place-content: center;
+  place-items: center;
+}
+
+.grid__content__stravaart {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
   margin: 3rem 4rem;
   padding: 2rem;
@@ -320,7 +330,13 @@ h3 {
     height: 100%;
   }
 
-  .grid__content {
+  .grid__content__projects {
+    grid-template-columns: auto;
+    padding-top: 3rem;
+    margin: 0;
+  }
+
+  .grid__content__stravaart {
     grid-template-columns: auto;
     padding-top: 3rem;
     margin: 0;
