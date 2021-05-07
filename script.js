@@ -45,12 +45,12 @@ const loadOnScroll = function (entries, observer) {
   observer.unobserve(entry.target);
 };
 
-const unBlurImage = function (entries, observer) {
-  const [entry] = entries;
-  if (!entry.isIntersecting) return;
-  entry.target.classList.remove("blur__img");
-  observer.unobserve(entry.target);
-};
+// const unBlurImage = function (entries, observer) {
+//   const [entry] = entries;
+//   if (!entry.isIntersecting) return;
+//   entry.target.classList.remove("blur__img");
+//   observer.unobserve(entry.target);
+// };
 
 //Observer parameters
 
@@ -77,17 +77,17 @@ headerObs.observe(header);
 
 const sectionObs = new IntersectionObserver(loadOnScroll, obsParamsSection);
 
-const imageObs = new IntersectionObserver(unBlurImage, obsParamsImage);
+//const imageObs = new IntersectionObserver(unBlurImage, obsParamsImage);
 
 sections.forEach(function (section) {
   sectionObs.observe(section);
   section.classList.add("section__hidden");
 });
 
-gridImages.forEach(function (image) {
-  imageObs.observe(image);
-  image.classList.add("blur__img");
-});
+// gridImages.forEach(function (image) {
+//   imageObs.observe(image);
+//   image.classList.add("blur__img");
+// });
 
 //Event listeners
 
