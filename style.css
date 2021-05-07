@@ -202,7 +202,7 @@ body {
   display: grid;
   grid-template-columns: 2fr 3fr;
   gap: 3rem;
-  margin: 3rem 4rem;
+  margin: 1rem 4rem;
   padding: 2rem;
   place-content: center;
   place-items: center;
@@ -212,7 +212,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
-  margin: 3rem 4rem;
+  margin: 1rem 4rem;
   padding: 2rem;
   place-content: center;
   place-items: center;
@@ -332,13 +332,13 @@ h3 {
 
   .grid__content__projects {
     grid-template-columns: auto;
-    padding-top: 3rem;
+    padding-top: 1rem;
     margin: 0;
   }
 
   .grid__content__stravaart {
     grid-template-columns: auto;
-    padding-top: 3rem;
+    padding-top: 1rem;
     margin: 0;
   }
 
